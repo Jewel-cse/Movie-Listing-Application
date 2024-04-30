@@ -31,11 +31,16 @@ public class Main {
                 case 5:
                     addToFavorite();
                     break;
+                case 6:
+                    removeFromFavorite();
+                    break;
                 default:
                     System.out.println("Invalid choice!");
             }
         }
     }
+
+
 }
 
 //See details for any movie like movie title, cast, category, release date, budget.

@@ -15,6 +15,9 @@ public class User {
         favorites.add(movie);;
     }
 
+    public void removeFavorite(Movie movie) {
+        favorites.remove(movie);
+    }
 
     public String getUserName() {
         return userName;
@@ -43,4 +46,6 @@ public class User {
                 "userName='" + userName + '\'' +
                 '}';
     }
+
+
 }

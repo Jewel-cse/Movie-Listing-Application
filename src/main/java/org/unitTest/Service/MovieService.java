@@ -50,6 +50,17 @@ public class MovieService {
         }
     }
 
+    public static void removeFromFavorite()  {
+        String title = getStringInput("Enter movie title which you want to delete from your favorite list ");
+        Movie movie = allMovies.stream().filter(movie1 -> movie1.getTitle().toLowerCase().contains(title.toLowerCase())).findAny().orElse(null);
+        if(movie != null){
+            currentUser.removeFavorite(movie);
+            System.out.println("Successfully delete to favorite");
+        }else{
+            System.out.println("Failed to delete in favorite ");
+        }
+    }
+
     public static void displayMovie(List<Movie> results){
 
         if (results.isEmpty()) {

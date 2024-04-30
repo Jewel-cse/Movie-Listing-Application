@@ -10,10 +10,11 @@ public class MenuService {
         System.out.println("3. Search Movies");
         System.out.println("4. See Details ");
         System.out.println("5. Add to Favorite");
+        System.out.println("6. Remove from Favorite");
 
         System.out.println("9. Exit");
 
-        return getIntInput("Choose the menu number ");
+        return getIntInput("Choose the menu number : ");
     }
     public static String getStringInput(String prompt) {
         System.out.print(prompt);
