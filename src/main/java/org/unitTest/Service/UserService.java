@@ -22,10 +22,12 @@ public class UserService {
     public static void seeUser(){
         if(currentUser != null){
             System.out.println(currentUser);
-            //System.out.println(currentUser.getFavorites());
         }
         else{
             System.out.println("No user signed in now");
         }
+    }
+    public static void searchFavorites(){
+        System.out.println(currentUser.getFavorites());
     }
 }

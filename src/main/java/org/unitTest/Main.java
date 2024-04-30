@@ -4,8 +4,7 @@ import org.unitTest.Utility.UtilityService;
 
 import static org.unitTest.Service.MenuService.displayMenu;
 import static org.unitTest.Service.MovieService.*;
-import static org.unitTest.Service.UserService.registerUser;
-import static org.unitTest.Service.UserService.seeUser;
+import static org.unitTest.Service.UserService.*;
 
 public class Main {
 
@@ -33,6 +32,9 @@ public class Main {
                     break;
                 case 6:
                     removeFromFavorite();
+                    break;
+                case 7:
+                    searchFavorites();
                     break;
                 default:
                     System.out.println("Invalid choice!");
