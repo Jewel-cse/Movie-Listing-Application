@@ -1,7 +1,6 @@
 package org.unitTest.Service;
 
 import org.unitTest.Model.Movie;
-import org.unitTest.Utility.UtilityService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +11,8 @@ import static org.unitTest.Service.UserService.currentUser;
 public class MovieService {
 
     public static List<Movie> allMovies = new ArrayList<>();
+    public static Integer totalMovies  = allMovies.size();
 
-    // Stage 2: Movie Search
     public static void searchMovies() {
         String searchTerm = getStringInput("Enter search term (title, cast, or category): ");
         List<Movie> results = new ArrayList<>();
@@ -26,6 +25,28 @@ public class MovieService {
                 }
             }
             displayMovie(results);
+        }
+    }
+
+    public static void seeDetails(){
+        String title = getStringInput("Enter movie title which you want to add favorite ");
+        Movie movie = allMovies.stream().filter(movie1 -> movie1.getTitle().toLowerCase().contains(title.toLowerCase())).findAny().orElse(null);
+        if(movie != null){
+            System.out.print(String.format("Title : %s \nCategory : %s \nCast : %s \nReleased : %s \nBudget : %s",
+                    movie.getTitle(), movie.getCategory(), movie.getCast(), movie.getReleaseDate(), movie.getBudget()));
+        }else {
+            System.out.println("Not exist with titled :"+title);
+        }
+    }
+
+    public static void addToFavorite()  {
+        String title = getStringInput("Enter movie title which you want to add favorite ");
+        Movie movie = allMovies.stream().filter(movie1 -> movie1.getTitle().toLowerCase().contains(title.toLowerCase())).findAny().orElse(null);
+        if(movie != null){
+            currentUser.addFavorites(movie);
+            System.out.println("Successfully add to favorite");
+        }else{
+            System.out.println("Failed to add in favorite ");
         }
     }
 

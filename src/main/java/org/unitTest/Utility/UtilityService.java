@@ -23,12 +23,12 @@ public class UtilityService {
                 List<String> cast = Arrays.asList(row[5].split(",")); // Assuming comma-separated cast
                 String category = row[2];
                 String releaseDate = row[6];
-                double budget;
+                Double budget;
                 try {
-                     budget = Double.parseDouble(row[10]);
+                     budget = Double.valueOf(row[10]);
                 } catch (NumberFormatException e) {
-                    System.out.println("Error parsing budget for movie: " + title + ". Using default value 0.");
-                    budget = 0;
+                    System.out.println("Budget is not defined for : " + title  );
+                    budget = 0.0;
                 }
                 Movie movie = new Movie(title, cast, category, releaseDate, budget);
                 //System.out.println(movie);

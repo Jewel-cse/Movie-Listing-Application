@@ -3,7 +3,7 @@ package org.unitTest;
 import org.unitTest.Utility.UtilityService;
 
 import static org.unitTest.Service.MenuService.displayMenu;
-import static org.unitTest.Service.MovieService.searchMovies;
+import static org.unitTest.Service.MovieService.*;
 import static org.unitTest.Service.UserService.registerUser;
 import static org.unitTest.Service.UserService.seeUser;
 
@@ -25,11 +25,19 @@ public class Main {
                 case 3:
                     searchMovies();
                     break;
+                case 4:
+                    seeDetails();
+                    break;
+                case 5:
+                    addToFavorite();
+                    break;
                 default:
                     System.out.println("Invalid choice!");
             }
         }
     }
 }
+
+//See details for any movie like movie title, cast, category, release date, budget.
 
 

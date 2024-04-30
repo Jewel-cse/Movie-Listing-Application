@@ -15,8 +15,10 @@ public class UserService {
         System.out.println("Registration successful!");
     }
     public static void seeUser(){
-        if(currentUser != null)
+        if(currentUser != null){
             System.out.println(currentUser);
+            //System.out.println(currentUser.getFavorites());
+        }
         else{
             System.out.println("No user signed in now");
         }
