@@ -7,8 +7,7 @@ public class MenuService {
         System.out.println("\nMovie App");
         System.out.println("1. Register User");
         System.out.println("2. See User");
-        System.out.println("3. See All Movies");
-
+        System.out.println("3. Search Movies Movies");
         System.out.println("9. Exit");
 
         return getIntInput();
