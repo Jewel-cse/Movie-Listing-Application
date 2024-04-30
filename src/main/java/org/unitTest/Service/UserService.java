@@ -5,7 +5,7 @@ import org.unitTest.Model.User;
 import java.util.Scanner;
 
 public class UserService {
-    private static User currentUser;
+    protected static User currentUser;
 
     // Stage 1: User Registration
     public static void registerUser() {
